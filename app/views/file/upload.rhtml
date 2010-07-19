@@ -1,0 +1,43 @@
+<p class="title">
+    Upload file to <%= @folder.name %>
+    <img alt="spinner" id="spinner" src="/images/spinner_mac.gif" style="display:none;" />
+</p>
+
+<div id="error" style="display:none;"></div>
+
+<% @upid = Time.now.to_i.to_s %>
+<% form_tag({:action => 'do_the_upload', :upload_id => @upid, :folder_id => controller.folder_id}, {:multipart => true, :target => 'upload', :onsubmit => "UploadProgress.monitor('#{escape_javascript @upid}')"}) do %>
+    <p>
+    	<%#= file_field 'myfile', 'myfile', :onchange => "checkFile();" %>
+	    <input id="my_file_element" type="file" name="file_0" onchange="checkFile();" >
+	</p>
+    <br />
+	<label for="myfile_description">Description(Optional)</label><br/>
+	<input name="myfile[description]" type=text><br><br/>
+    <label for="myfile_tags">Add Tags(Optional)</label><br/>
+	<input name="tag_1" type=text>Tag 1<br>
+	<input name="tag_2" type=text>Tag 2<br>
+	<input name="tag_3" type=text>Tag 3<br>
+	<br />
+    <p><%= submit_tag :Upload, :id => 'submit_upload', :disabled => true %></p>
+<% end %>
+
+<div id="results"></div>
+<div id="progress-bar"><span id="initial-status">0%</span></div>
+
+<%= link_to 'Back', :controller => 'folder', :action => 'list', :id => controller.folder_id %>
+
+<script type="text/javascript">
+    function checkFile()
+    {
+        new Ajax.Updater('error',
+                         '/file/validate_filename/<%= controller.folder_id %>', 
+                         { asynchronous:true,
+                           evalScripts:true,
+                           onLoading:function(request){Element.show('spinner');},
+                           parameters:document.getElementById('myfile_myfile').value }
+            );
+    }
+</script>
+
+<iframe id="upload" name="upload" src="about:blank" style="width:0px;height:0px;border-style:none;background-color:#FFF;"></iframe>

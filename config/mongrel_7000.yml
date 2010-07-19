@@ -1,0 +1,19 @@
+--- 
+:includes: 
+:log_file: log/mongrel.log
+:mime_map: 
+:cwd: D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5
+:config_script: 
+:prefix: 
+:debug: false
+:group: 
+:throttle: 0
+:host: 0.0.0.0
+:environment: development
+:timeout: 60
+:port: 3000
+:daemon: false
+:num_processors: 1024
+:user: 
+:docroot: public
+:pid_file: log/mongrel.pid

@@ -1,0 +1,14 @@
+# Logfile created on Thu Jul 15 17:12:44 +0530 2010 by /
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/myfile
+rebuild index: [Myfile(id: integer, filename: string, description: string, filesize: integer, date_modified: datetime, folder_id: integer, user_id: integer, indexed: boolean)]
+reindexing model Myfile
+reindex model Myfile : 150.00% complete : 0.05 secs to finish
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/myfile
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/myfile
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/myfile
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/folder
+rebuild index: [Folder(id: integer, name: string, date_modified: datetime, user_id: integer, parent_id: integer, is_root: boolean)]
+reindexing model Folder
+reindex model Folder : 100.00% complete : 0.02 secs to finish
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/folder
+LocalIndex: ensure_index_exists at D:/ROR/InstantRails/rails_apps/arvind/bxr_0.6.5/index/development/folder
